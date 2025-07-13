@@ -1,4 +1,4 @@
-package com.sofa.graphql;
+package com.sofa.graphql.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

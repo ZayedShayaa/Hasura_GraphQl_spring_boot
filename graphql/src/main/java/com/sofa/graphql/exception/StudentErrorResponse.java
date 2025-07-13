@@ -1,4 +1,4 @@
-package com.sofa.graphql;
+package com.sofa.graphql.exception;
 
 public class StudentErrorResponse {
 	private int status;
