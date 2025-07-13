@@ -1,0 +1,8 @@
+query GetStudentById($id: bigint!) {
+  student_by_pk(id: $id) {
+    id
+    name
+    email
+    age
+  }
+}

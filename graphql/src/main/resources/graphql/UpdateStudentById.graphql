@@ -1,0 +1,12 @@
+mutation UpdateStudentById($id: bigint!, $name: String, $email: String, $age: Int) {
+  update_student_by_pk(pk_columns: {id: $id}, _set: {
+    name: $name,
+    email: $email,
+    age: $age
+  }) {
+    id
+    name
+    email
+    age
+  }
+}

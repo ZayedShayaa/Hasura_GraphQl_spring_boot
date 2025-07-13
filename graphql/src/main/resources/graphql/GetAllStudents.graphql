@@ -1,0 +1,8 @@
+query GetAllStudents {
+  student {
+    id
+    name
+    email
+    age
+  }
+}
