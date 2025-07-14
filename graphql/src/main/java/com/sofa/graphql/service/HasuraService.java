@@ -55,16 +55,25 @@ public class HasuraService {
         }
     }
 
-    public List<Student> getAllStudents() {
+//    public List<Student> getAllStudents() {
+//        GetAllStudents query = new GetAllStudents();
+//        String responseBody = executeGraphQLQuery(query.getQuery(), null);
+//
+//        GraphQLResponseWrapper<GetAllStudents.Result> wrapper = deserializeResponse(responseBody, new TypeReference<>() {});
+//        return wrapper.getData().getStudent().stream()
+//                .map(StudentMapper::from)
+//                .collect(Collectors.toList());
+//    }
+
+    public GetAllStudents.Result getAllStudents() {
         GetAllStudents query = new GetAllStudents();
         String responseBody = executeGraphQLQuery(query.getQuery(), null);
 
-        GraphQLResponseWrapper<GetAllStudents.Result> wrapper = deserializeResponse(responseBody, new TypeReference<>() {});
-        return wrapper.getData().getStudent().stream()
-                .map(StudentMapper::from)
-                .collect(Collectors.toList());
-    }
+        GraphQLResponseWrapper<GetAllStudents.Result> wrapper =
+                deserializeResponse(responseBody, new TypeReference<>() {});
 
+        return wrapper.getData();  // ترجع الـ Result كامل
+    }
     public Student getStudentById(Long id) {
         GetStudentById.Variables vars = new GetStudentById.Variables(id);
         GetStudentById query = new GetStudentById(vars);

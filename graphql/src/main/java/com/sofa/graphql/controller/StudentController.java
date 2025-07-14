@@ -1,5 +1,6 @@
 package com.sofa.graphql.controller;
 
+import com.sofa.generated.GetAllStudents;
 import com.sofa.graphql.service.HasuraService;
 import com.sofa.graphql.service.model.Student;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +22,11 @@ public class StudentController {
     public List<Student> getAllStudents() {
         return studentService.getAllStudents();
     }
+
+//    @GetMapping
+//    public GetAllStudents.Result getAllStudents() {
+//        return studentService.getAllStudents();
+//    }
 
     @GetMapping("/{id}")
     public Student getStudentById(@PathVariable Long id) {
